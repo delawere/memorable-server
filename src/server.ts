@@ -8,7 +8,7 @@ fastifyInstance.get('/', async () => {
 
 const start = async () => {
   try {
-    await fastifyInstance.listen(3000);
+    await fastifyInstance.listen(process.env.PORT || 3000);
   } catch (err) {
     fastifyInstance.log.error(err);
     process.exit(1);
